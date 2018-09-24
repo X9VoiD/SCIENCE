@@ -36,6 +36,16 @@ Item* newItem(char *name, int cost)     // Initializer of Item struct
 	return myItem;
 }
 
+void write(char *a, char *b)
+{
+	int i = 0;
+	while (*(b + i) != '\0')
+	{
+		*(a + i) = *(b + i);
+		i++
+	}
+}
+
 /*******************************************/
 /* Graphical Backend                       */
 /*******************************************/
