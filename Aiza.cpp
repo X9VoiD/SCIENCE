@@ -38,12 +38,18 @@ Item* newItem(char *name, int cost)     // Initializer of Item struct
 
 void write(char *a, char *b)
 {
-	int i = 0;
-	while (*(b + i) != '\0')
+	for (int i = 0; *(b + i) != '\0'; i++)
 	{
 		*(a + i) = *(b + i);
-		i++
 	}
+}
+
+void append(char *a, char*b)
+{
+	int i = 0;
+	int offset = 0;
+	for (; *(a + offset) != 0; offset++) {}
+	write(a + offset, b);
 }
 
 /*******************************************/
@@ -108,7 +114,7 @@ void loading_animation()
 	{
 		cout << pad(verticalPad, '\n');
 		centerPrint((char *) &"Loading....");
-		cout << floor(loadNumber) << '%' << endl << endl;
+		cout << floor(loadNumber) << '%' << '\n' << '\n';
 		cout << pad(i, '|');
 		loadNumber += magic;
 		Sleep(1000/100); // Divide 1 second to 100 animation frames. Loader animation finishes more than 1 second since Windows cmd output is slower than expected.
