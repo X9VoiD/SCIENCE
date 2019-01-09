@@ -48,7 +48,10 @@ void append(char *a, char*b)
 {
 	int i = 0;
 	int offset = 0;
-	for (; *(a + offset) != 0; offset++) {}
+	while (*(a + offset) != '\0')
+	{
+		offset++;
+	}
 	write(a + offset, b);
 }
 
